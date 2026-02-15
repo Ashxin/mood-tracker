@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0 0, 0.3);
+  padding: 40px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #666;
+  font-size: 1.1em;
+}
+
+.mood-selector {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.mood-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 20px 10px;
+  background: #f8f9fa;
+  border: 3px solid transparent;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.mood-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mood-btn.selected {
+  border-color: #667eea;
+  background: #e8eaf6;
+  transform: scale(1.05);
+}
+
+.mood-btn span {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #333;
+}
+
+.mood-btn::first-line {
+  font-size: 2em;
+}
+
+#moodNote {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1em;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#moodNote:focus {
+  border-color: #667eea;
+}
+
+#saveBtn {
+  width: 100%;
+  padding: 15px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#saveBtn:hover:not(:disabled) {
+  background: #5568d3;
+  transform: translateY(-2px);
+}
+
+#saveBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.history-section {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.history-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.mood-summary {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 15px;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-item .emoji {
+  font-size: 2em;
+}
+
+.summary-item .count {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.entries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.no-entries {
+  text-align: center;
+  color: #999;
+  padding: 40px;
+  font-style: italic;
+}
+
+.entry-card {
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.entry-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(5px);
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entry-mood {
+  font-size: 1.3em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.entry-mood .emoji {
+  font-size: 1.5em;
+}
+
+.entry-note {
+  color: #555;
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 5px 0;
+}
+
+.entry-date {
+  color: #999;
+  font-size: 0.85em;
+  font-style: italic;
+}
+
+.delete-btn {
+  padding: 8px 16px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.3s;
+  align-self: flex-end;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+.entry-card.happy {
+  border-left: 5px solid #28a745;
+}
+
+.entry-card.sad {
+  border-left: 5px solid #6c757d;
+}
+
+.entry-card.neutral {
+  border-left: 5px solid #ffc107;
+}
+
+.entry-card.stressed {
+  border-left: 5px solid #dc3545;
+}
+
+.entry-card.tired {
+  border-left: 5px solid #17a2b8;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+  .mood-selector {
+    flex-direction: column;
+  }
+  .mood-btn {
+    min-width: 100%;
+  }
+  .mood-summary {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}

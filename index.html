@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>😊 Mood Tracker</h1>
+      <p>How are you feeling today?</p>
+    </header>
+
+    <div class="input-section">
+      <div class="mood-selector">
+        <button class="mood-btn" data-mood="happy">😊<span>Happy</span></button>
+        <button class="mood-btn" data-mood="sad">😢<span>Sad</span></button>
+        <button class="mood-btn" data-mood="neutral">😐<span>Neutral</span></button>
+        <button class="mood-btn" data-mood="stressed">😰<span>Stressed</span></button>
+        <button class="mood-btn" data-mood="tired">😴<span>Tired</span></button>
+      </div>
+
+
+      <textarea id="moodNote" placeholder="Add a note (optional)..." maxlength="200"></textarea>
+
+      <button id="saveBtn" disabled>Save Mood Entry</button>
+    </div>
+
+    <div class="history-section">
+      <h2>📊 Mood History</h2>
+
+
+      <div class="mood-summary">
+        <div class="summary-item">
+          <span class="emoji">😊</span>
+          <span class="count" id="happyCount">0</span>
+        </div>
+        <div class="summary-item">
+          <span class="emoji">😢</span>
+          <span class="count" id="sadCount">0</span>
+        </div>
+        <div class="summary-item">
+          <span class="emoji">😐</span>
+          <span class="count" id="neutralCount">0</span>
+        </div>
+        <div class="summary-item">
+          <span class="emoji">😰</span>
+          <span class="count" id="stressedCount">0</span>
+        </div>
+        <div class="summary-item">
+          <span class="emoji">😴</span>
+          <span class="count" id="tiredCount">0</span>
+        </div>
+      </div>
+
+      <div id="entriesList" class="entries-list">
+        <p class="no-entires">No entries yet. Log you first mood!</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
